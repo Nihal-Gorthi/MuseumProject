@@ -22,10 +22,23 @@ function renderModalPage(index) {
     dotsContainer.innerHTML = '';
     const ul = document.createElement('ul');
     ul.className = 'modal-bullets';
-    currentParagraphs.forEach(text => {
-      const li = document.createElement('li');
-      li.innerHTML = text;
-      ul.appendChild(li);
+    currentParagraphs.forEach(item => {
+      if (Array.isArray(item)) {
+        // Sub-bullet: nest under the previous <li>
+        const lastLi = ul.lastElementChild;
+        const subUl = document.createElement('ul');
+        item.forEach(subText => {
+          const subLi = document.createElement('li');
+          subLi.innerHTML = subText;
+          subUl.appendChild(subLi);
+        });
+        if (lastLi) lastLi.appendChild(subUl);
+        else ul.appendChild(subUl);
+      } else {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        ul.appendChild(li);
+      }
     });
     descEl.innerHTML = '';
     descEl.appendChild(ul);
@@ -71,7 +84,7 @@ export function clickHandling(renderer, camera, paintings, door, controls, setSp
       };
       document.getElementById('exit-confirm').onclick = () => {
         exitModal.classList.remove('show');
-        window.__showWelcome();
+        document.getElementById('letter-modal').classList.add('show');
       };
       return;
     }
@@ -81,13 +94,25 @@ export function clickHandling(renderer, camera, paintings, door, controls, setSp
     if (hits.length === 0) return;
 
     const painting = hits[0].object;
-    const { title, origin, museum, paragraphs } = painting.userData.info;
+    const { title, origin, museum, paragraphs, disclaimer } = painting.userData.info;
     controls.unlock();
 
     document.getElementById('modal-img').src = painting.userData.imgSrc;
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-origin').textContent = origin ?? '';
     document.getElementById('modal-museum').textContent = museum ?? '';
+
+    // Show/hide disclaimer
+    let disclaimerEl = document.getElementById('modal-disclaimer');
+    if (!disclaimerEl) {
+      disclaimerEl = document.createElement('p');
+      disclaimerEl.id = 'modal-disclaimer';
+      disclaimerEl.style.cssText = 'color:#888;font-style:italic;font-size:0.85em;margin:4px 0 0;';
+      document.getElementById('modal-title').after(disclaimerEl);
+    }
+    disclaimerEl.textContent = disclaimer ?? '';
+    disclaimerEl.style.display = disclaimer ? '' : 'none';
+
     currentParagraphs = paragraphs || [];
     currentPageIndex = 0;
     renderModalPage(0);

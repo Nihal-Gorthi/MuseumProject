@@ -69,3 +69,12 @@ renderer.domElement.addEventListener("click", () => {
 });
 
 window.__showWelcome = showWelcome;
+
+document.getElementById('letter-continue').addEventListener('click', () => {
+  document.getElementById('letter-modal').classList.remove('show');
+  showWelcome();
+});
+
+document.getElementById('letter-close').addEventListener('click', () => {
+  document.getElementById('letter-modal').classList.remove('show');
+});

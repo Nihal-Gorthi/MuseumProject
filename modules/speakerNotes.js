@@ -9,7 +9,7 @@ const NOTES = {
 <li>How do the exhibits connect to literature like Antigone and Metamorphosis? What is similar and what is different, and how might these connections influence us today?</li>
 <li>What sacrifices are people willing to make to have their place in the world? What drives people to make these sacrifices?</li>
 </ul>`,
-  museum: `<ul><li><kbd>W A S D</kbd> — Move</li><li><kbd>Mouse</kbd> — Look</li><li><kbd>Click</kbd> — Inspect</li></ul>`,
+  museum: `<ul><li><kbd>W A S D</kbd> — Move</li><li><kbd>Mouse</kbd> — Look</li><li><kbd>Click</kbd> — Inspect</li><li>Click exit to view reflection</li></ul>`,
 };
 
 const bar = () => document.getElementById("speaker-bar");

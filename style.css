@@ -225,6 +225,18 @@ canvas {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+.welcome-credit {
+  margin-top: 12px;
+  font-size: 0.72em;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Inter', sans-serif;
+}
+.welcome-credit a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: underline;
+}
+.welcome-credit a:hover { color: rgba(255,255,255,0.8); }
+
 /* Exhibit Details Modal */
 #exhibit-modal {
   display: none;
@@ -248,7 +260,7 @@ canvas {
   background: #fdfcf7;
   border-radius: 20px;
   border: none;
-  padding: 56px 48px 32px;
+  padding: 44px 48px 32px;
   max-width: 1300px;
   width: 96%;
   max-height: 88vh;
@@ -293,6 +305,11 @@ ul.modal-bullets {
 
 ul.modal-bullets li {
   margin-bottom: 12px;
+}
+
+ul.modal-bullets li ul {
+  padding-left: 24px;
+  margin-top: 6px;
 }
 
 .modal-img-container {
@@ -410,8 +427,8 @@ ul.modal-bullets li {
 /* Modern Clean Circular Close Button */
 #modal-close {
   position: absolute;
-  top: 24px;
-  right: 28px;
+  top: 12px;
+  right: 12px;
   background: rgba(0, 0, 0, 0.05);
   border: none;
   font-size: 1.1em;
@@ -565,10 +582,10 @@ ul.modal-bullets li {
 #exit-content p { margin-bottom: 24px; }
 #exit-buttons { display: flex; gap: 16px; justify-content: center; }
 #exit-buttons button {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75em;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1em;
+  letter-spacing: normal;
+  text-transform: none;
   padding: 10px 28px;
   border-radius: 6px;
   cursor: pointer;
@@ -579,3 +596,78 @@ ul.modal-bullets li {
 }
 #exit-buttons button:hover { background: rgba(255,255,255,0.18); }
 #exit-confirm:hover { background: rgba(220,80,80,0.25) !important; }
+
+#letter-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#letter-modal.show { display: flex; }
+#letter-content {
+  background: #fdfcf5;
+  border-radius: 12px;
+  padding: 40px 48px;
+  max-width: 680px;
+  width: 92%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  position: relative;
+}
+#letter-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: #555;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#letter-close:hover { background: rgba(0,0,0,0.08); }
+#letter-body {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
+  color: #222;
+  font-size: 1.05em;
+  line-height: 1.75;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+#letter-body::-webkit-scrollbar { width: 5px; }
+#letter-body::-webkit-scrollbar-track { background: transparent; }
+#letter-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
+#letter-body p { margin: 0 0 18px; }
+#letter-body p:last-child { margin-bottom: 0; }
+#letter-sign { margin-top: 24px; font-style: italic; }
+#letter-continue {
+  margin-top: 24px;
+  align-self: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1em;
+  letter-spacing: normal;
+  text-transform: none;
+  padding: 10px 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: #111;
+  color: #fff;
+  transition: background 0.2s;
+}
+#letter-continue:hover { background: #333; }
