@@ -24,7 +24,7 @@ function renderModalPage(index) {
     ul.className = 'modal-bullets';
     currentParagraphs.forEach(text => {
       const li = document.createElement('li');
-      li.textContent = text;
+      li.innerHTML = text;
       ul.appendChild(li);
     });
     descEl.innerHTML = '';
