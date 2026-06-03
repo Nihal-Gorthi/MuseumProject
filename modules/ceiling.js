@@ -62,13 +62,20 @@ export const createCeiling = (scene) => {
     reflectivity: 0.8,
     side: THREE.DoubleSide,
   });
-  const paneSize = 3.76; // 4 units minus bar thickness (0.12) with small gap
-  const centers = [-6, -2, 2, 6]; // centers of each cell between bars
-  for (const cx of centers) {
-    for (const cz of centers) {
-      const pane = new THREE.Mesh(new THREE.PlaneGeometry(paneSize, paneSize), glassMat);
+  // Inner cells (between bars at -8,-4,0,4,8): centers at -6,-2,2,6, size ~3.76
+  // Outer cells (between frame at ±10 and first bar at ±8): centers at ±9, size ~1.76
+  const innerCenters = [-6, -2, 2, 6];
+  const outerCenters = [-9, 9];
+  const innerSize = 3.76;
+  const outerSize = 1.76;
+
+  for (const cx of [...innerCenters, ...outerCenters]) {
+    for (const cz of [...innerCenters, ...outerCenters]) {
+      const w = outerCenters.includes(cx) ? outerSize : innerSize;
+      const h = outerCenters.includes(cz) ? outerSize : innerSize;
+      const pane = new THREE.Mesh(new THREE.PlaneGeometry(w, h), glassMat);
       pane.rotation.x = Math.PI / 2;
-      pane.position.set(cx, 10.38, cz); // just below bar level
+      pane.position.set(cx, 10.38, cz);
       scene.add(pane);
     }
   }
