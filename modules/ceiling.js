@@ -39,8 +39,11 @@ export const createCeiling = (scene) => {
     scene.add(m);
   });
 
-  // 2. Sky texture behind the skylight opening
+  // Set sky as scene background (shows through skylight opening)
   const skyTex = textureLoader.load("/img/sky.png");
+  scene.background = skyTex;
+
+  // Sky texture plane behind the skylight opening (closer view)
   const skyPlane = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20),
     new THREE.MeshBasicMaterial({ map: skyTex })
