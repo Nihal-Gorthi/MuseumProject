@@ -28,12 +28,12 @@ const exhibitDetails = {
   ]
 };
 
-function makeEntry(name, x, y, z, rotationY, origin, museum) {
+function makeEntry(name, x, y, z, rotationY, origin, museum, displayTitle) {
   return {
     imgSrc: `/artworks/${name}.png`,
     position: { x, y, z },
     rotationY,
-    info: { title: name, origin, museum, paragraphs: exhibitDetails[name] },
+    info: { title: displayTitle ?? name, origin, museum, paragraphs: exhibitDetails[name] },
   };
 }
 
@@ -42,5 +42,5 @@ export const paintingData = [
   makeEntry('Sword',      0, 0.5, -19.8, 0,            'Italy, c. 1580', 'Uffizi Gallery, Florence'),
   makeEntry('Mask',      10, 0.5, -19.8, 0,            'France, c. 1720', 'Musée du Louvre, Paris'),
   makeEntry('Palace', -19.8, 0.5, 0,  Math.PI / 2,    'Persia, c. 1400', 'The British Museum, London'),
-  makeEntry('Toreador', 19.8, 0.5, 0, -Math.PI / 2,   'Spain, c. 1894', 'Museu Picasso, Barcelona'),
+  makeEntry('Toreador', 19.8, 0.5, 0, -Math.PI / 2,   'Edouard Manet', 'National Gallery of Art', 'The Dead Toreador (1864)'),
 ];
