@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Cost of Glory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Crosshair HUD -->
+    <div id="crosshair"></div>
+
+    <!-- Resume Play Hint -->
+    <div id="resume-hint">Click anywhere to resume viewing</div>
+
+    <!-- Welcome Modal -->
+    <div id="welcome-modal">
+      <div id="welcome-door-bg"></div>
+      <div id="welcome-overlay"></div>
+      <div id="welcome-content">
+        <div class="curator-label">— Curator's Note —</div>
+        <h1>The Cost of Glory</h1>
+        <p class="welcome-subtitle">Human Sacrifice &amp; Recognition in the Modern World</p>
+        <div class="curator-note">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p class="curator-sig">— The Curator</p>
+        </div>
+        <div class="welcome-controls">
+          <span><kbd>W A S D</kbd> Move</span>
+          <span><kbd>Mouse</kbd> Look</span>
+          <span><kbd>Click</kbd> Inspect</span>
+        </div>
+        <button id="welcome-btn">Enter</button>
+      </div>
+    </div>
+
+    <!-- Painting Details Modal -->
+    <div id="exhibit-modal">
+      <div id="modal-content">
+        <button id="modal-close">✕</button>
+        <div class="modal-img-container">
+          <img id="modal-img" src="" alt="Exhibit" />
+        </div>
+        <h2 id="modal-title"></h2>
+        <div class="modal-meta">
+          <span id="modal-origin"></span>
+          <span class="modal-meta-sep">·</span>
+          <span id="modal-museum"></span>
+        </div>
+        <div class="modal-body">
+          <button id="modal-prev-btn">&#8249;</button>
+          <p id="modal-desc"></p>
+          <button id="modal-next-btn">&#8250;</button>
+        </div>
+        <div id="modal-dots-container"></div>
+      </div>
+    </div>
+
+    <!-- Exit Confirm Modal -->
+    <div id="exit-modal">
+      <div id="exit-content">
+        <p>Leave the exhibition?</p>
+        <div id="exit-buttons">
+          <button id="exit-cancel">Stay</button>
+          <button id="exit-confirm">Exit</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+
+    <!-- Speaker Notes Bar -->
+    <div id="speaker-bar">
+      <div id="speaker-tab" aria-label="Toggle speaker notes">
+        <span id="speaker-label">Speaker Notes</span>
+        <span id="speaker-chevron">▲</span>
+      </div>
+      <div id="speaker-body">
+        <p id="speaker-text"></p>
+      </div>
+    </div>
+  </body>
+</html>
