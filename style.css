@@ -95,7 +95,7 @@ canvas {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 48px rgba(0,0,0,0.6);
   border-radius: 16px;
-  max-width: 480px;
+  max-width: 720px;
   width: 92%;
   padding: 48px 44px 40px;
   text-align: center;
@@ -156,7 +156,6 @@ canvas {
 
 .curator-note ul {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
   font-size: 0.9em;
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.85;
