@@ -154,6 +154,20 @@ canvas {
 
 .curator-note p:last-child { margin-bottom: 0; }
 
+.curator-note ul {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.85;
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.curator-note ul ul {
+  margin-bottom: 0;
+}
+
 .curator-sig {
   text-align: right;
   font-style: italic;
