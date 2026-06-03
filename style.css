@@ -469,6 +469,15 @@ canvas {
   margin: 0;
 }
 
+#speaker-text ul {
+  padding-left: 20px;
+  margin: 6px 0 0;
+}
+
+#speaker-text li {
+  margin-bottom: 4px;
+}
+
 /* Exit Confirm Modal */
 #exit-modal {
   display: none;
