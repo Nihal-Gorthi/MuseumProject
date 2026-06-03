@@ -246,9 +246,9 @@ canvas {
 #modal-content {
   position: relative;
   background: #fdfcf7;
-  border-radius: 4px;
-  border: 3px double #8b5a2b;
-  padding: 40px 48px 32px;
+  border-radius: 20px;
+  border: none;
+  padding: 56px 48px 32px;
   max-width: 1100px;
   width: 92%;
   max-height: 88vh;
@@ -277,12 +277,13 @@ canvas {
 
 #modal-right {
   flex-shrink: 0;
-  width: 280px;
+  width: 340px;
   text-align: center;
+  padding-top: 8px;
 }
 
 ul.modal-bullets {
-  padding-left: 20px;
+  padding-left: 28px;
   margin: 0;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1em;
@@ -291,33 +292,33 @@ ul.modal-bullets {
 }
 
 ul.modal-bullets li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .modal-img-container {
   display: inline-block;
-  padding: 14px;
+  padding: 10px;
   background: #fefdfa;
-  border: 10px solid #ca9e2b;
+  border: 6px solid #ca9e2b;
   box-shadow: inset 0 0 12px rgba(0,0,0,0.25), 0 10px 25px rgba(0,0,0,0.3);
-  border-radius: 2px;
+  border-radius: 4px;
   margin-bottom: 20px;
   max-width: 100%;
 }
 
 #modal-img {
   max-width: 100%;
-  max-height: 36vh;
+  max-height: 44vh;
   display: block;
   object-fit: contain;
 }
 
 #modal-content h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 2.2em;
+  font-size: 1.6em;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: #111;
   text-transform: uppercase;
 }
@@ -328,9 +329,8 @@ ul.modal-bullets li {
   font-weight: 300;
   color: #8b5a2b;
   letter-spacing: 0.5px;
-  margin-bottom: 22px;
-  border-bottom: 1px solid rgba(139,90,43,0.15);
-  padding-bottom: 16px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .modal-meta-sep { margin: 0 10px; opacity: 0.4; }
