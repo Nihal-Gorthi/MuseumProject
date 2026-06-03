@@ -52,19 +52,26 @@ export const createCeiling = (scene) => {
   skyPlane.position.set(0, 10.5, 0);
   scene.add(skyPlane);
 
-  // Thin glass panel over the sky
+  // Individual glass panes between grid bars (grid spacing = 4 units, bars at -8,-4,0,4,8)
   const glassMat = new THREE.MeshPhysicalMaterial({
-    color: 0xffffff,
+    color: 0xc8e8f5,
     transparent: true,
-    opacity: 0.15,
-    roughness: 0.05,
-    metalness: 0.0,
+    opacity: 0.25,
+    roughness: 0.0,
+    metalness: 0.1,
+    envMapIntensity: 1.0,
     side: THREE.DoubleSide,
   });
-  const glass = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), glassMat);
-  glass.rotation.x = Math.PI / 2;
-  glass.position.set(0, 10.4, 0);
-  scene.add(glass);
+  const paneSize = 3.76; // 4 units minus bar thickness (0.12) with small gap
+  const centers = [-6, -2, 2, 6]; // centers of each cell between bars
+  for (const cx of centers) {
+    for (const cz of centers) {
+      const pane = new THREE.Mesh(new THREE.PlaneGeometry(paneSize, paneSize), glassMat);
+      pane.rotation.x = Math.PI / 2;
+      pane.position.set(cx, 10.38, cz); // just below bar level
+      scene.add(pane);
+    }
+  }
 
   // 3. Steel framing and grid (centered at y=10.4)
   const steelMat = new THREE.MeshStandardMaterial({
