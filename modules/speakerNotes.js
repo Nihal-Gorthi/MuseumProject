@@ -9,7 +9,7 @@ const NOTES = {
 <li>How do the exhibits connect to literature like Antigone and Metamorphosis? What is similar and what is different, and how might these connections influence us today?</li>
 <li>What sacrifices are people willing to make to have their place in the world? What drives people to make these sacrifices?</li>
 </ul>`,
-  museum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visitor is now wandering the gallery. Use this space for ambient curatorial commentary — observations about the room, the light, or the collection as a whole. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.`,
+  museum: `<span><kbd>W A S D</kbd> Move &nbsp;·&nbsp; <kbd>Mouse</kbd> Look &nbsp;·&nbsp; <kbd>Click</kbd> Inspect</span>`,
 };
 
 const bar = () => document.getElementById("speaker-bar");

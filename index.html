@@ -53,21 +53,27 @@
     <div id="exhibit-modal">
       <div id="modal-content">
         <button id="modal-close">✕</button>
-        <div class="modal-img-container">
-          <img id="modal-img" src="" alt="Exhibit" />
+        <div id="modal-layout">
+          <div id="modal-left">
+            <div class="modal-body">
+              <button id="modal-prev-btn">&#8249;</button>
+              <p id="modal-desc"></p>
+              <button id="modal-next-btn">&#8250;</button>
+            </div>
+            <div id="modal-dots-container"></div>
+          </div>
+          <div id="modal-right">
+            <div class="modal-img-container">
+              <img id="modal-img" src="" alt="Exhibit" />
+            </div>
+            <h2 id="modal-title"></h2>
+            <div class="modal-meta">
+              <span id="modal-origin"></span>
+              <span class="modal-meta-sep">·</span>
+              <span id="modal-museum"></span>
+            </div>
+          </div>
         </div>
-        <h2 id="modal-title"></h2>
-        <div class="modal-meta">
-          <span id="modal-origin"></span>
-          <span class="modal-meta-sep">·</span>
-          <span id="modal-museum"></span>
-        </div>
-        <div class="modal-body">
-          <button id="modal-prev-btn">&#8249;</button>
-          <p id="modal-desc"></p>
-          <button id="modal-next-btn">&#8250;</button>
-        </div>
-        <div id="modal-dots-container"></div>
       </div>
     </div>
 

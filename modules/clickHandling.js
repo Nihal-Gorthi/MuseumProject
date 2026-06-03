@@ -9,16 +9,39 @@ let _setSpeakerState;
 
 function renderModalPage(index) {
   if (!currentParagraphs.length) return;
-  currentPageIndex = (index + currentParagraphs.length) % currentParagraphs.length;
 
+  const prevBtn = document.getElementById('modal-prev-btn');
+  const nextBtn = document.getElementById('modal-next-btn');
+  const dotsContainer = document.getElementById('modal-dots-container');
   const descEl = document.getElementById('modal-desc');
+
+  // If multiple bullets, show all as a list (no pagination needed)
+  if (currentParagraphs.length > 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    dotsContainer.innerHTML = '';
+    const ul = document.createElement('ul');
+    ul.className = 'modal-bullets';
+    currentParagraphs.forEach(text => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      ul.appendChild(li);
+    });
+    descEl.innerHTML = '';
+    descEl.appendChild(ul);
+    return;
+  }
+
+  // Single paragraph — show as plain text
+  prevBtn.style.display = '';
+  nextBtn.style.display = '';
+  currentPageIndex = (index + currentParagraphs.length) % currentParagraphs.length;
   descEl.style.opacity = '0';
   setTimeout(() => {
     descEl.textContent = currentParagraphs[currentPageIndex];
     descEl.style.opacity = '1';
   }, 120);
 
-  const dotsContainer = document.getElementById('modal-dots-container');
   dotsContainer.innerHTML = '';
   currentParagraphs.forEach((_, idx) => {
     const dot = document.createElement('div');
@@ -70,8 +93,9 @@ export function clickHandling(renderer, camera, paintings, door, controls, setSp
     renderModalPage(0);
     document.getElementById('exhibit-modal').classList.add('show');
 
-    // Speaker notes: use first paragraph as modal note
-    _setSpeakerState('modal', paragraphs?.[0] ?? '');
+    // Use painting-specific speaker note if available, else first paragraph
+    const note = painting.userData.info.speakerNote ?? paragraphs?.[0] ?? '';
+    _setSpeakerState('modal', note);
   });
 
   document.getElementById('modal-close').addEventListener('click', closeModal);

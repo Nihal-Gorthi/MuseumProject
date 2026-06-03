@@ -263,6 +263,37 @@ canvas {
   to { transform: scale(1); opacity: 1; }
 }
 
+#modal-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+#modal-left {
+  flex: 1;
+  min-width: 0;
+}
+
+#modal-right {
+  flex-shrink: 0;
+  width: 280px;
+  text-align: center;
+}
+
+ul.modal-bullets {
+  padding-left: 20px;
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1em;
+  line-height: 1.7;
+  color: #333;
+}
+
+ul.modal-bullets li {
+  margin-bottom: 10px;
+}
+
 .modal-img-container {
   display: inline-block;
   padding: 14px;
