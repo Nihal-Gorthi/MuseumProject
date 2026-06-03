@@ -39,18 +39,11 @@ export const createCeiling = (scene) => {
     scene.add(m);
   });
 
-  // Set sky video as scene background
-  const video = document.createElement('video');
-  video.src = '/img/skymoving.mp4';
-  video.loop = true;
-  video.muted = true;
-  video.autoplay = true;
-  video.playsInline = true;
-  video.play();
-  const skyTex = new THREE.VideoTexture(video);
+  // Set sky image as scene background
+  const skyTex = new THREE.TextureLoader().load('/img/sky.png');
   scene.background = skyTex;
 
-  // Sky video plane behind the skylight opening
+  // Sky plane behind the skylight opening
   const skyPlane = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20),
     new THREE.MeshBasicMaterial({ map: skyTex })
