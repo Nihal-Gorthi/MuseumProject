@@ -1,16 +1,14 @@
 const NOTES = {
-  welcome: `This museum exhibit captures the extent of human sacrifice to achieve honor and dignity in a world where people increasingly feel left behind. While the artworks differ vastly in geographic and temporal scope, they all share the common message of displaying the various (often drastic) actions that people take in order to have their place and be recognized in the world.
+  welcome: `<p>This museum exhibit captures the extent of human sacrifice to achieve honor and dignity in a world where people increasingly feel left behind. While the artworks differ vastly in geographic and temporal scope, they all share the common message of displaying the various (often drastic) actions that people take in order to have their place and be recognized in the world.</p>
 
-In our exhibit, we focus both on how this sacrifice might look like at an individual level as well as at a much larger scale. For instance, in The Dead Toreador and Versatile Queen, we will explore how individuals choose to express themselves, even if it comes with the risk of losing one's identity or even death. Conversely, in Palace of the Parthian Kings and Emblem of Authority, we explore this issue on a much larger scale, such as when governments wage deadly conflicts in an attempt to gain prestige. Finally, our own image, The Burden of Achievement reflects the connection of our theme to the modern world. While many images reflect what happened many years ago, this work highlights how people today still sacrifice a lot in exchange for achievement.
-<br>
-What we want the viewers to think about:
-<br>
+<p>In our exhibit, we focus both on how this sacrifice might look like at an individual level as well as at a much larger scale. For instance, in The Dead Toreador and Versatile Queen, we will explore how individuals choose to express themselves, even if it comes with the risk of losing one's identity or even death. Conversely, in Palace of the Parthian Kings and Emblem of Authority, we explore this issue on a much larger scale, such as when governments wage deadly conflicts in an attempt to gain prestige. Finally, our own image, The Burden of Achievement reflects the connection of our theme to the modern world. While many images reflect what happened many years ago, this work highlights how people today still sacrifice a lot in exchange for achievement.</p>
+
+<p>What we want the viewers to think about:</p>
 <ul>
 <li>How does the artwork displayed demonstrate how human sacrifice is often a means of feeling significant in an indifferent society?</li>
 <li>How do the exhibits connect to literature like Antigone and Metamorphosis? What is similar and what is different, and how might these connections influence us today?</li>
 <li>What sacrifices are people willing to make to have their place in the world? What drives people to make these sacrifices?</li>
-</ul>
-`,
+</ul>`,
   museum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visitor is now wandering the gallery. Use this space for ambient curatorial commentary — observations about the room, the light, or the collection as a whole. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.`,
 };
 
