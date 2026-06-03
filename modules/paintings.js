@@ -69,7 +69,7 @@ function addPaintingLamp(scene, paintingPos, rotationY) {
 }
 
 // Toreador=1 going around the room
-const EXHIBIT_NUMBERS = { Toreador: 1, Palace: 2, Queen: 3, Sword: 4, Mask: 5 };
+const EXHIBIT_NUMBERS = { Toreador: 1, Palace: 2, Queen: 3, Sword: 4, Mask: 5, burnout: 5 };
 
 function createNumberLabel(num) {
   const canvas = document.createElement("canvas");
