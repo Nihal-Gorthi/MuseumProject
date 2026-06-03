@@ -54,12 +54,12 @@ export const createCeiling = (scene) => {
 
   // Individual glass panes between grid bars (grid spacing = 4 units, bars at -8,-4,0,4,8)
   const glassMat = new THREE.MeshPhysicalMaterial({
-    color: 0xc8e8f5,
+    color: 0xa8d8f0,
     transparent: true,
-    opacity: 0.25,
-    roughness: 0.0,
-    metalness: 0.1,
-    envMapIntensity: 1.0,
+    opacity: 0.55,
+    roughness: 0.05,
+    metalness: 0.2,
+    reflectivity: 0.8,
     side: THREE.DoubleSide,
   });
   const paneSize = 3.76; // 4 units minus bar thickness (0.12) with small gap
