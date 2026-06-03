@@ -30,7 +30,7 @@ const exhibitDetails = {
 
 function makeEntry(name, x, y, z, rotationY, origin, museum) {
   return {
-    imgSrc: `/3D-art-gallery/artworks/${name}.png`,
+    imgSrc: `/artworks/${name}.png`,
     position: { x, y, z },
     rotationY,
     info: { title: name, origin, museum, paragraphs: exhibitDetails[name] },

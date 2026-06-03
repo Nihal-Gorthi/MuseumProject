@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 export const createCeiling = (scene) => {
   const textureLoader = new THREE.TextureLoader();
-  const ceilTex = textureLoader.load("/3D-art-gallery/img/ceilingtexture.png");
+  const ceilTex = textureLoader.load("/img/ceilingtexture.png");
   ceilTex.wrapS = THREE.RepeatWrapping;
   ceilTex.wrapT = THREE.RepeatWrapping;
   ceilTex.repeat.set(4, 4);

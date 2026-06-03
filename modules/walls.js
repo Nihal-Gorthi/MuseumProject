@@ -3,7 +3,7 @@ import * as THREE from "three";
 export function createWalls(scene) {
   const collisionWalls = new THREE.Group();
   const textureLoader = new THREE.TextureLoader();
-  const wallTexture = textureLoader.load("/3D-art-gallery/img/marble.png");
+  const wallTexture = textureLoader.load("/img/marble.png");
   wallTexture.wrapS = THREE.RepeatWrapping;
   wallTexture.wrapT = THREE.RepeatWrapping;
   wallTexture.repeat.set(4, 2);

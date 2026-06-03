@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 export const setupFloor = (scene) => {
   const textureLoader = new THREE.TextureLoader();
-  const floorTex = textureLoader.load("/3D-art-gallery/img/usefloor.png");
+  const floorTex = textureLoader.load("/img/usefloor.png");
   floorTex.wrapS = THREE.RepeatWrapping;
   floorTex.wrapT = THREE.RepeatWrapping;
   // Aspect-correct repeat: texture is 886×608 (~3:2), floor is 40×40 units
