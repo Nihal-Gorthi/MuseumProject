@@ -19,7 +19,7 @@ export const setupScene = () => {
 
   renderer = new THREE.WebGLRenderer({ antialias: false }); // create a WebGLRenderer and set its antialias property to true to enable antialiasing which smooths out the edges of what is rendered
   renderer.setSize(window.innerWidth, window.innerHeight); // set the size of the renderer to the inner width and height of the window (the browser window)
-  renderer.setClearColor(0x87CEEB, 1); // sky blue background
+  renderer.setClearColor(0x1a1a1a, 1); // dark background
   document.body.appendChild(renderer.domElement); // append the renderer to the body of the document (the <canvas> element that the renderer uses will be added to the body)
 
   renderer.shadowMap.enabled = true; // enable shadow mapping

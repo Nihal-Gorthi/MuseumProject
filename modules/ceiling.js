@@ -39,20 +39,26 @@ export const createCeiling = (scene) => {
     scene.add(m);
   });
 
-  // 2. Central Raised Glass Panel (placed at y=10.4)
+  // 2. Sky texture behind the skylight opening
+  const skyTex = textureLoader.load("/img/sky.png");
+  const skyPlane = new THREE.Mesh(
+    new THREE.PlaneGeometry(20, 20),
+    new THREE.MeshBasicMaterial({ map: skyTex })
+  );
+  skyPlane.rotation.x = Math.PI / 2;
+  skyPlane.position.set(0, 10.5, 0);
+  scene.add(skyPlane);
+
+  // Thin glass panel over the sky
   const glassMat = new THREE.MeshPhysicalMaterial({
-    color: 0xd0e8f2, // soft sky-tinted blue
+    color: 0xffffff,
     transparent: true,
-    opacity: 0.4,
-    roughness: 0.1,
-    metalness: 0.9,
-    transmission: 0.6,
-    ior: 1.5,
-    thickness: 0.1,
+    opacity: 0.15,
+    roughness: 0.05,
+    metalness: 0.0,
     side: THREE.DoubleSide,
   });
-  const glassGeo = new THREE.PlaneGeometry(20, 20);
-  const glass = new THREE.Mesh(glassGeo, glassMat);
+  const glass = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), glassMat);
   glass.rotation.x = Math.PI / 2;
   glass.position.set(0, 10.4, 0);
   scene.add(glass);
