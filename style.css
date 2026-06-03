@@ -266,7 +266,7 @@ canvas {
 #modal-layout {
   display: flex;
   gap: 32px;
-  align-items: flex-start;
+  align-items: center;
   text-align: left;
 }
 
@@ -277,9 +277,9 @@ canvas {
 
 #modal-right {
   flex-shrink: 0;
-  width: 340px;
+  width: 360px;
   text-align: center;
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 ul.modal-bullets {
@@ -308,19 +308,21 @@ ul.modal-bullets li {
 
 #modal-img {
   max-width: 100%;
-  max-height: 44vh;
+  max-height: 52vh;
   display: block;
   object-fit: contain;
 }
 
 #modal-content h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.6em;
+  font-size: 1.3em;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
   color: #111;
-  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .modal-meta {
