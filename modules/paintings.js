@@ -167,7 +167,8 @@ export async function createPaintings(scene, textureLoader) {
     paintingGroups.push(group);
 
     // Gold exhibit number — large, to the left of the frame
-    const num = EXHIBIT_NUMBERS[data.info.title];
+    const fileKey = data.imgSrc.split('/').pop().replace('.png', '');
+    const num = EXHIBIT_NUMBERS[fileKey];
     if (num !== undefined) {
       const numMesh = new THREE.Mesh(
         new THREE.PlaneGeometry(1.6, 1.6),
