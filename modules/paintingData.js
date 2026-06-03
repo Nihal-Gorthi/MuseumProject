@@ -43,7 +43,7 @@ const speakerNotes = {
 
 <p>Finally, we would also like to note the composition of the image. Instead of depicting the whole arena cheering him on, we only see the bullfighter up close, hands over his chest. We think Monet was trying to say that honor can sometimes be a foolish thing to chase because if you take dangerous risks you might end up like him.</p>
 
-<p>Sources used:<br>
+
 <hr style="border:none;border-top:1px solid rgba(255,255,255,0.2);margin:12px 0;">
 <p>Sources used:</p>
 <ul>
